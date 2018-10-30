@@ -1,6 +1,9 @@
 // angular components
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // 3rd party components
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,6 +22,11 @@ import { LoginComponent } from './components/login/login.component';
 // my services/pipes
 import { AuthGuard } from './services/auth.guard';
 import { AuthenticationService } from './services/authentication.service';
+import { GlobalService } from './services/global.service';
+import { ApiService } from './services/services.service';
+import { JwtInterceptor } from './services/jwt.interceptor';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -28,19 +36,29 @@ import { AuthenticationService } from './services/authentication.service';
     BusComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    SidebarComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     routing,
     NgbModule.forRoot(),
     BlockUIModule.forRoot(),
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [
     appRouters,
     AuthGuard,
     AuthenticationService,
     ApiService,
+    GlobalService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })

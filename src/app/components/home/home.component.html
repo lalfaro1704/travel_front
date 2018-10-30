@@ -1,5 +1,20 @@
 <app-header></app-header>
 
-<router-outlet></router-outlet>
+<div class="container fix-container-width">
+    <div class="row row-offcanvas row-offcanvas-right side-container">
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="pad col-lg-9 col-md-9 col-sm-12">
+            <div class="row container-white container-reserva border-container-white">
+                <div class="container">
+                    <div class="row container-white">
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <app-footer></app-footer>

@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { TravelComponent } from './components/travel/travel.component';
 import { BusComponent } from './components/bus/bus.component';
+import { UserComponent } from './components/user/user.component';
 
 const router: Routes = [
     { 
@@ -14,6 +15,7 @@ const router: Routes = [
         children: [
             { path: 'trips', component: TravelComponent },
             { path: 'buses', component: BusComponent },
+            { path: 'users', component: UserComponent },
         ]
     },
     { path: 'login', component: LoginComponent },

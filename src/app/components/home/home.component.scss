@@ -1,0 +1,28 @@
+.fix-container-width {
+
+    .side-container {
+        padding-top: 10%;
+        padding-left: 3%;
+
+        .pad {
+            padding-right: 4%;
+        }
+
+        .border-container-white{
+            border-left: 1px solid #eee;
+            border-top: 1px solid #eee;
+            border-right: 2px solid #eee;
+            border-bottom: 2px solid #eee;
+        }
+
+        .container-reserva {
+            padding: 50px;
+            margin-bottom: 100px;
+        }
+
+        .container-white {
+            background: #fff;
+            border-radius: 10px;
+        }
+    }
+}

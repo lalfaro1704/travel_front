@@ -11,7 +11,6 @@ import { AuthenticationService } from '../../services/authentication.service';
 export class LoginComponent implements OnInit {
   model: any = {};
   returnUrl: string;
-  public loading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,31 +24,16 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loading = true;
     this.authenticationService.login(this.model.user, this.model.password).subscribe(
     data => {
-      this.loading = false;
-      localStorage.setItem('userData', JSON.stringify(data.results[0].user));
-      localStorage.setItem('idUser', JSON.stringify(data.results[0].user_id));
-      if (data.results.length > 0) {
-        for (const item of data.results[0].config) {
-          localStorage.setItem('terminos', JSON.stringify(item.configuration.commercial_terms));
-        }
-      }
-      for (const item of data.results) {
-        localStorage.setItem('token', JSON.stringify(item.token));
-      }
       this.router.navigate(['']);
     },
     error => {
-      this.loading = false;
       console.log(error);
     });
   }
 
-  OnDestroy(){
-
-  }
+  OnDestroy(){ }
 
 }
 

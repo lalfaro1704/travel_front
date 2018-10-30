@@ -3,23 +3,23 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/services.service';
 
 @Component({
-  selector: 'app-bus',
-  templateUrl: './bus.component.html',
-  styleUrls: ['./bus.component.scss']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
 })
-export class BusComponent implements OnInit {
-  buses: JSON;
+export class UserComponent implements OnInit {
+  users: JSON;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.loadBuses();
+    this.loadUsers();
   }
 
-  loadBuses(){
-    this.apiService.getBuses().subscribe(
+  loadUsers(){
+    this.apiService.getUsers().subscribe(
       data => {
-        this.buses = data['results'];
+        this.users = data['results'];
       },
       error => {
         console.log(<any>error);
@@ -27,7 +27,7 @@ export class BusComponent implements OnInit {
     );
   }
 
-  deleteBus(id) {
+  deleteUser(id) {
     console.log(id);
   }
 
