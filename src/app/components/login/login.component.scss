@@ -1,0 +1,40 @@
+.boxlogin {
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+    .login {
+        background: #68a3e299;
+        border-radius: 5px;
+        .logo {
+            text-align: center;
+            padding-top: 2rem;
+            img {
+                width: 60%;
+            }
+        }
+        form {
+            margin:40px 0px 40px 0px;
+            padding: 0 78px 20px 78px;
+            display: inline-block;
+            width: 100%;
+            label {
+                font-size: 14px;
+                font-weight: bold;
+            }
+            input {
+                border: 1px solid #D1D1D4;
+                border-radius: 3px;
+            }
+            .btn {
+                border-radius: 3px;
+                float: right;
+                margin-top:5px;
+            }
+            .form-group {
+                margin-bottom: 12px;
+            }
+        }
+
+
+    }
+}
