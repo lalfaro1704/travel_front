@@ -18,4 +18,20 @@ export class ApiService {
         return this.http.get<any>(this.globalService.baseUrl + '/users/api/user/');
     }
 
+    getDrivers(): Observable<any>{
+        return this.http.get<any>(this.globalService.baseUrl + '/travel/api/driver/');
+    }
+
+    getTrips(): Observable<any>{
+        return this.http.get<any>(this.globalService.baseUrl + '/travel/api/trip/');
+    }
+
+    getTripStats(): Observable<any>{
+        return this.http.get<any>(this.globalService.baseUrl + '/travel/api/tripstats/');
+    }
+
+    getBusStats(): Observable<any>{
+        return this.http.get<any>(this.globalService.baseUrl + '/travel/api/busstats/');
+    }
+
 }

@@ -8,6 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { TravelComponent } from './components/travel/travel.component';
 import { BusComponent } from './components/bus/bus.component';
 import { UserComponent } from './components/user/user.component';
+import { DriverComponent } from './components/driver/driver.component';
+import { StatsComponent } from './components/stats/stats.component';
+import { BookingComponent } from './components/booking/booking.component';
 
 const router: Routes = [
     { 
@@ -16,6 +19,9 @@ const router: Routes = [
             { path: 'trips', component: TravelComponent },
             { path: 'buses', component: BusComponent },
             { path: 'users', component: UserComponent },
+            { path: 'drivers', component: DriverComponent },
+            { path: 'stats', component: StatsComponent },
+            // { path: 'booking', component: BookingComponent },
         ]
     },
     { path: 'login', component: LoginComponent },

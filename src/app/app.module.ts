@@ -18,6 +18,10 @@ import { BusComponent } from './components/bus/bus.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { UserComponent } from './components/user/user.component';
+import { DriverComponent } from './components/driver/driver.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 // my services/pipes
 import { AuthGuard } from './services/auth.guard';
@@ -25,8 +29,8 @@ import { AuthenticationService } from './services/authentication.service';
 import { GlobalService } from './services/global.service';
 import { ApiService } from './services/services.service';
 import { JwtInterceptor } from './services/jwt.interceptor';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { UserComponent } from './components/user/user.component';
+import { BookingComponent } from './components/booking/booking.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +42,10 @@ import { UserComponent } from './components/user/user.component';
     FooterComponent,
     LoginComponent,
     SidebarComponent,
-    UserComponent
+    UserComponent,
+    DriverComponent,
+    StatsComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,

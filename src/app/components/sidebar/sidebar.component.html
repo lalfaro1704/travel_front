@@ -4,20 +4,9 @@
     <li><a routerLink="/" routerLinkActive="active"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
     <li><a routerLink="/users" routerLinkActive="active"><i class="fa fa-user" aria-hidden="true"></i> Pasajeros</a></li>
     <li><a routerLink="/buses" routerLinkActive="active"><i class="fa fa-bus-alt"></i> Buses</a></li>
-    <li><a routerLink="/" routerLinkActive="active"><i class="fa fa-user-tie"></i> Choferes</a></li>
-    <li><a routerLink="/" routerLinkActive="active"><i class="fa fa-map-marked-alt"></i> Trayectos</a></li>
-    <li class="submenu open">
-      <a href="javascript:" (click)="isNavbarCollapseds = !isNavbarCollapseds" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsDefaults">
-        <i class="fa fa-clipboard-list"></i>
-        Estadísticas
-      </a>
-      <!-- Sub menu -->
-      <div [ngbCollapse]="isNavbarCollapseds" class="collapse navbar-collapse" id="navbarsDefaults">
-        <ul>
-          <li [routerLinkActive]="['current']" [routerLinkActiveOptions]="{exact:true}"><a href="javascript:" routerLink="/reserva/{{rut}}"><i class="fa fa-clock-o" aria-hidden="true"></i> Promedio de pasajeros por trayecto</a></li>
-          <li [routerLinkActive]="['current']" [routerLinkActiveOptions]="{exact:true}"><a href="javascript:" [routerLink]="['/mis_reservas']"><i class="fa fa-address-book-o" aria-hidden="true"></i> Boletos vendidos por trayecto</a></li>
-        </ul>
-      </div>
-    </li>
+    <li><a routerLink="/drivers" routerLinkActive="active"><i class="fa fa-user-tie"></i> Choferes</a></li>
+    <li><a routerLink="/trips" routerLinkActive="active"><i class="fa fa-map-marked-alt"></i> Trayectos</a></li>
+    <!--li><a routerLink="/booking" routerLinkActive="active"><i class="fa fa-user-clock"></i> Reservar</a></li-->
+    <li><a routerLink="/stats" routerLinkActive="active"><i class="fa fa-clipboard-list"></i> Estadísticas</a></li>
   </ul>
 </div>

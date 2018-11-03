@@ -3,23 +3,23 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/services.service';
 
 @Component({
-  selector: 'app-travel',
-  templateUrl: './travel.component.html',
-  styleUrls: ['./travel.component.scss']
+  selector: 'app-driver',
+  templateUrl: './driver.component.html',
+  styleUrls: ['./driver.component.scss']
 })
-export class TravelComponent implements OnInit {
-  trips: JSON;
+export class DriverComponent implements OnInit {
+  drivers: JSON;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.loadTrips();
+    this.loadDrivers();
   }
 
-  loadTrips(){
-    this.apiService.getTrips().subscribe(
+  loadDrivers(){
+    this.apiService.getDrivers().subscribe(
       data => {
-        this.trips = data['results'];
+        this.drivers = data['results'];
       },
       error => {
         console.log(<any>error);
@@ -27,7 +27,7 @@ export class TravelComponent implements OnInit {
     );
   }
 
-  deleteTrip(id) {
+  deleteDriver(id) {
     console.log(id);
   }
 

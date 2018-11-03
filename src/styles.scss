@@ -3,6 +3,12 @@
     font-size: 32px;
 }
 
+.titulo_s {
+    color: #7ad0e1;
+    margin-top: 1rem;
+    font-size: 18px;
+}
+
 .clock{
     font-size: 60px;
 }
@@ -18,4 +24,8 @@
 
 .delete:hover {
     color: #ff0000;
+}
+
+app-user, app-bus, app-driver, app-travel, app-stats, app-booking {
+    width: 100%;
 }

@@ -1,0 +1,44 @@
+<div class="col-lg-12 col-md-12 col-sm-12 text-muted">
+  <i aria-hidden="true" class="clock fa fa-user-clock fa-4x"></i>
+  <div class="titulo_p"><b>Reserva</b></div>
+  Reserva de asiento para un trayecto
+</div>
+<br>
+<div class="full-width text-muted">
+  <div class="row">
+    <div class="col-lg-4 col-md-12 col-sm-12">
+      Selecciona trayecto<br/>
+      <select class="form-control"  #t (change)="myTripHandler(t.value)">
+        <option value="0">-- Seleccione --</option>
+        <option value="0">-- VIÑA - SANTIAGO --</option>
+        <ng-template  ngFor let-specialty [ngForOf]="specialtiesList">
+          <option value="{{specialty.code}}">{{specialty.name}}</option>
+        </ng-template>
+      </select>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12" *ngIf="true">
+      <div class="calendario-centrado">
+        <ngb-datepicker [(minDate)]="minDate" [(ngModel)]="model" [markDisabled]="isWeekend" (ngModelChange)="myDatepickerHandler(p.value)"></ngb-datepicker>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12" *ngIf="true">
+      Horas Disponibles <br>
+      <select class="form-control" #i>
+        <option value="0">-- Seleccione --</option>
+        <ng-template  ngFor let-interval [ngForOf]="intervals">
+          <option value="{{interval.id}}" [disabled]="interval.disabled">{{interval.time_start}} - {{interval.time_end}}</option>
+        </ng-template>
+      </select>
+      <br>
+      Horas Disponibles <br>
+      <select class="form-control" #i>
+        <option value="0">-- Seleccione --</option>
+        <ng-template  ngFor let-interval [ngForOf]="intervals">
+          <option value="{{interval.id}}" [disabled]="interval.disabled">{{interval.time_start}} - {{interval.time_end}}</option>
+        </ng-template>
+      </select>
+      <br>
+      <a href="javascript:void(0);" class="btn btn-primary" (click)="myScheduling(p.value,i.value)">Reservar</a>
+    </div>
+  </div>
+</div>
